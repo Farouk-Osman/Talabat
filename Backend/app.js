@@ -2,10 +2,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const port = 3000;
-
+const categoryRoutes = require("./routes/category");
+app.use(express.json());
 app.get('/', (req, res) => {
   res.send(`Server is running on port ${port}`);
 });
+app.use("/category",categoryRoutes);
 
 async function connectDB() {
     await mongoose.connect('mongodb://localhost:27017', {
