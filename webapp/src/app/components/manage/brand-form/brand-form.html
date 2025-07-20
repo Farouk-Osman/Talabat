@@ -1,0 +1,16 @@
+<div class="px-40 mt-10 flex justify-center">
+    <form class="w-96 show p-6">
+        @if(id){<h1 class="text-xs">Edit Brand</h1>}
+        @else{<h1 class="text-xs">Add Brand</h1>}
+        <div class="flex flex-wrap">
+            <mat-form-field class="w-full">
+                <mat-label>Brand Name</mat-label>
+                <input matInput type="text" [(ngModel)]="name" name="name" required>
+            </mat-form-field>
+        </div>
+        <div class="flex justify-end">
+            @if(id){<button mat-raised-button color="primary" (click)="edit()">Edit</button>}
+            @else{<button mat-raised-button color="primary" (click)="add()">Add</button>}
+        </div>
+    </form>
+</div>

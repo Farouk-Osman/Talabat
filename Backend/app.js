@@ -5,6 +5,7 @@ const port = 3000;
 const cors = require('cors');
 
 const categoryRoutes = require("./routes/category");
+const brandRoutes = require("./routes/brand");
 // const cartRoutes = require("./routes/cart");
 // const wishlistRoutes = require("./routes/wishlist");
 // const userRoutes = require("./routes/user");
@@ -18,6 +19,7 @@ app.get('/', (req, res) => {
   res.send(`Server is running on port ${port}`);
 });
 app.use("/category",categoryRoutes);
+app.use("/brand", require("./routes/brand"));
 // app.use("/cart", cartRoutes);
 // app.use("/wishlist", wishlistRoutes);
 // app.use("/user", userRoutes);
