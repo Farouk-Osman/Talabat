@@ -1,12 +1,14 @@
-const Product = require('../DB/product');
+const Product = require('./../DB/product');
 
 async function addProduct(req, res) {
     try {
+        console.log('addProduct req.body:', req.body);
         let model = req.body;
         let product = new Product(model);
         const savedProduct = await product.save();
         res.status(201).send(savedProduct.toObject());
     } catch (err) {
+        console.error('addProduct error:', err);
         res.status(500).send({ message: "Error saving product", error: err });
     }
 }
@@ -51,4 +53,12 @@ async function getProduct(req, res) {
     }
 }
 
-module.exports = { addProduct, updateProduct, deleteProduct, getProduct };
+async function getAllProducts(req, res) {
+    try {
+        const products = await Product.find();
+        res.send(products.map(product => product.toObject()));
+    } catch (err) {
+        res.status(500).send({ message: "Error retrieving products", error: err });
+    }
+}
+module.exports = { addProduct, updateProduct, deleteProduct, getProduct, getAllProducts };

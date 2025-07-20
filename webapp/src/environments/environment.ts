@@ -1,3 +1,3 @@
 export const environment = {
-    apiUrl : 'http://talabat.test',
+    apiUrl : 'http://localhost:3000',
 };
