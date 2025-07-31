@@ -9,10 +9,8 @@ import { ProductForm } from './components/manage/product-form/product-form';
 
 export const routes: Routes = [
     {
-        
         path:"",
         component:Home
-
     },
     {
         path: "admin/categories",

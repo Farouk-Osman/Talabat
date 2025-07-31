@@ -61,4 +61,21 @@ async function getAllProducts(req, res) {
         res.status(500).send({ message: "Error retrieving products", error: err });
     }
 }
-module.exports = { addProduct, updateProduct, deleteProduct, getProduct, getAllProducts };
+async function getFeaturedProducts(req, res) {
+    try {
+        const products = await Product.find({ isFeatured: true });
+        res.send(products.map(product => product.toObject()));
+    } catch (err) {
+        res.status(500).send({ message: "Error retrieving featured products", error: err });
+    }
+}
+
+async function getNewProducts(req, res) {
+    try {
+        const products = await Product.find({ isNewProduct : true });
+        res.send(products.map( (product) => product.toObject()));
+    } catch (err) {
+        res.status(500).send({ message: "Error retrieving new products", error: err });
+    }
+}
+module.exports = { addProduct, updateProduct, deleteProduct, getProduct, getAllProducts, getFeaturedProducts, getNewProducts };

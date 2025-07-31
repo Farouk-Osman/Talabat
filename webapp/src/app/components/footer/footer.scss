@@ -1,0 +1,74 @@
+// Variables
+$primary-orange: #ff6600;
+$hover-orange: #ff8533;
+$text-gray: #555;
+$bg-footer: #f4f4f4;
+$bg-bottom: #eaeaea;
+
+footer {
+  background-color: $bg-footer;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+  padding-top: 20px;
+
+  .footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px 16px;
+
+    .footer-logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: $primary-orange;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $hover-orange;
+        cursor: pointer;
+      }
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      a {
+        text-decoration: none;
+        color: $text-gray;
+        font-weight: 500;
+        transition: color 0.3s;
+
+        &:hover {
+          color: $primary-orange;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    background-color: $bg-bottom;
+    padding: 12px 24px;
+    text-align: center;
+
+    p {
+      margin: 0;
+      font-size: 14px;
+      color: $text-gray;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer-top {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .footer-links {
+      gap: 12px;
+      flex-direction: column;
+    }
+  }
+}

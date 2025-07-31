@@ -9,6 +9,7 @@ import { MatButton, MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import { Product } from '../../../types/product';
 @Component({
+  standalone: true,
   selector: 'app-products',
   imports: [MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule,MatButtonModule,RouterLink],
   templateUrl: './products.html',

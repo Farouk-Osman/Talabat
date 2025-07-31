@@ -11,6 +11,8 @@ const brandRoutes = require("./routes/brand");
 // const userRoutes = require("./routes/user");
 const productRoutes = require("./routes/product");
 // const orderRoutes = require("./routes/order");
+const customerRoutes = require("./routes/customer");
+
 
 app.use(express.json());
 app.use(cors());
@@ -21,6 +23,8 @@ app.get('/', (req, res) => {
 app.use("/category",categoryRoutes);
 app.use("/brand", brandRoutes);
 app.use("/products", productRoutes);
+app.use("/customer", customerRoutes);
+
 // app.use("/cart", cartRoutes);
 // app.use("/wishlist", wishlistRoutes);
 // app.use("/user", userRoutes);

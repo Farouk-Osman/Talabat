@@ -1,0 +1,113 @@
+// Color variables
+$primary-orange: #ff6600;
+$hover-orange: #ff8533;
+$blue-link: #007bff;
+$hover-blue: #3399ff;
+$text-dark: #333;
+$bg-light: #f8f8f8;
+$bg-menu: #eeeeee;
+
+header {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+  .top-header,
+  .category-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+  }
+
+  .top-header {
+    background-color: $bg-light;
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: $primary-orange;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $hover-orange;
+        cursor: pointer;
+      }
+    }
+
+    .search-bar {
+      flex: 1;
+      margin: 0 20px;
+
+      input {
+        width: 100%;
+        max-width: 400px;
+        padding: 8px 12px;
+        font-size: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        transition: border-color 0.3s, box-shadow 0.3s;
+
+        &:focus {
+          border-color: $primary-orange;
+          box-shadow: 0 0 5px rgba(255, 102, 0, 0.4);
+          outline: none;
+        }
+      }
+    }
+
+    .profile-link {
+      a {
+        text-decoration: none;
+        color: $blue-link;
+        font-weight: 500;
+        transition: color 0.3s;
+
+        &:hover {
+          color: $hover-blue;
+        }
+      }
+    }
+  }
+
+  .category-menu {
+    background-color: $bg-menu;
+    gap: 20px;
+    padding: 10px 24px;
+
+    a {
+      text-decoration: none;
+      color: $text-dark;
+      font-weight: 500;
+      position: relative;
+      padding: 4px 6px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $primary-orange;
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          width: 100%;
+          height: 2px;
+          background-color: $primary-orange;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .top-header,
+    .category-menu {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .search-bar {
+      width: 100%;
+    }
+  }
+}

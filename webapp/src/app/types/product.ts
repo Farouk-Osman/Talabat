@@ -8,5 +8,7 @@ export interface Product {
     images: string[];
     category: { _id: string, name: string };
     brand : { _id: string, name: string };
+    isFeatured: boolean;
+    isNewProduct: boolean;
 }
 

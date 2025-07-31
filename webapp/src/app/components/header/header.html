@@ -1,1 +1,22 @@
-<p>header works!</p>
+<!-- header.component.html -->
+<header>
+  <!-- First Line -->
+  <div class="top-header">
+    <div class="logo">Talabat</div>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search for products..." />
+    </div>
+
+    <div class="profile-link">
+      <a routerLink="/profile">My Profile</a>
+    </div>
+  </div>
+
+  <!-- Second Line -->
+  <nav class="category-menu">
+    @for (category of categoryList; track $index) {
+      <a >{{ category.name }}</a>
+    }
+  </nav>
+</header>

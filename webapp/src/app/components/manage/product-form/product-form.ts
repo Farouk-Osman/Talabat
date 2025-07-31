@@ -11,11 +11,12 @@ import { Category } from '../../../types/category';
 import { CategoryService } from '../../../services/category';
 import { BrandService } from '../../../services/brand';
 import { Product } from '../../../types/product';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @Component({
   selector: 'app-product-form',
-  imports: [FormsModule, ReactiveFormsModule, MatInputModule, MatButtonModule, MatSelectModule,MatButtonModule,MatButton],
+  imports: [FormsModule, ReactiveFormsModule, MatInputModule, MatButtonModule, MatSelectModule,MatButtonModule,MatButton,MatCheckboxModule],
   templateUrl: './product-form.html',
   styleUrl: './product-form.scss'
 })
@@ -29,7 +30,9 @@ export class ProductForm {
     discount: [],
     images: this.formbuilder.array([]),
     category: [null, [Validators.required]],
-    brand : [null, [Validators.required]]
+    brand : [null, [Validators.required]],
+    isFeatured : [false],
+    isNewProduct : [false]
   });
   brands:Brand[] = [];
   categories: Category[] = [];
@@ -40,6 +43,7 @@ export class ProductForm {
   route = inject(ActivatedRoute);
   isEdit = false;
   id!: string;
+
   ngOnInit() {
     
     this.categoriesService.getCategories().subscribe({
@@ -121,3 +125,5 @@ export class ProductForm {
   }
 
 }
+
+

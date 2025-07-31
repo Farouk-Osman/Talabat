@@ -1,0 +1,106 @@
+.products-container {
+  padding: 2rem 3rem;
+  font-family: 'Segoe UI', sans-serif;
+
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    button {
+        border-radius: 12px !important;
+        font-weight: 600;
+        padding: 10px 20px;
+        margin: 0 8px;
+        transition: all 0.3s ease-in-out;
+        background-color: #ffffff;
+        color: black;
+
+        &:hover {
+            background-color: #FF6F00 !important;
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(255, 102, 0, 0.2);
+        }
+    }
+
+  }
+
+  .filter-field {
+    width: 100%;
+    margin-bottom: 1rem;
+
+    input {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 100%;
+      transition: border-color 0.3s;
+
+      &:focus {
+        border-color: #FF6F00;
+        outline: none;
+      }
+    }
+  }
+
+  .table-container {
+    overflow: auto;
+    border-radius: 8px;
+
+    table {
+      width: 100%;
+      border-radius: 6px;
+      background: #fff;
+      border-collapse: collapse;
+
+      th {
+        background: #f1f1f1;
+        font-weight: 600;
+        color: #333;
+        text-align: left;
+      }
+
+      td {
+        color: #444;
+      }
+
+      td,
+      th {
+        padding: 12px 16px;
+        border-bottom: 1px solid #eee;
+      }
+
+      tr {
+        transition: background 0.3s;
+
+        &:hover {
+          background: #fff3e0;
+        }
+      }
+    }
+
+    .mat-paginator {
+      padding: 10px 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .filter-field {
+      margin-top: 0.5rem;
+    }
+  }
+}

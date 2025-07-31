@@ -1,0 +1,12 @@
+<div class="product-card">
+  <img [src]="product.images[0] || 'assets/default.jpg'" alt="{{ product.name }}" />
+  <div class="product-info">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.shortDescription }}</p>
+    <div class="price">
+      <span class="final-price">${{ product.price - product.discount * product.price /100 }}</span>
+      <span class="original-price" *ngIf="product.discount > 0">${{ product.price }}</span>
+    </div>
+  </div>
+  <button mat-raised-button color="primary" class="add-to-cart">Add to Cart</button>
+</div>
