@@ -1,6 +1,6 @@
-<div class="product-card">
-  <img [src]="product.images[0] || 'assets/default.jpg'" alt="{{ product.name }}" />
-  <div class="product-info">
+<div class="product-card" >
+  <div class="product-info" [routerLink]="['/products', product._id]">
+    <img [src]="product.images[0] || 'assets/default.jpg'" alt="{{ product.name }}" />
     <h3>{{ product.name }}</h3>
     <p>{{ product.shortDescription }}</p>
     <div class="price">

@@ -1,0 +1,19 @@
+<div class="product-detail-container" *ngIf="product">
+  <div class="image-section">
+    <img [src]="product.images[0] || 'assets/default.jpg'" alt="{{ product.name }}" />
+  </div>
+
+  <div class="info-section">
+    <h1>{{ product.name }}</h1>
+    <p class="short-description">{{ product.shortDescription }}</p>
+    <p class="full-description">{{ product.description }}</p>
+
+    <div class="price">
+      <span class="final-price">${{ product.price - product.discount * product.price / 100 }}</span>
+      <span class="original-price" *ngIf="product.discount > 0">${{ product.price }}</span>
+    </div>
+
+    <button mat-raised-button color="primary" class="add-to-cart"> Add to Cart</button>
+
+  </div>
+</div>

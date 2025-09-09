@@ -1,0 +1,62 @@
+form {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  transition: all 0.3s ease-in-out;
+  font-family: 'Segoe UI', sans-serif;
+
+  h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #FF6F00;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+
+    ::ng-deep .mat-form-field-wrapper {
+      transition: border 0.3s;
+      border-radius: 8px;
+    }
+
+    &:hover {
+      ::ng-deep .mat-form-field-outline {
+        border-color: #FF6F00 !important;
+      }
+    }
+
+    input {
+      font-size: 16px;
+    }
+  }
+
+  .flex.justify-end {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+
+  button {
+    border-radius: 12px !important;
+    font-weight: 600;
+    padding: 10px 20px;
+    margin-left: 8px;
+    transition: all 0.3s ease-in-out;
+    background-color: #ffffff;
+    color: black;
+
+    &:hover {
+      background-color: #FF6F00 !important;
+      color: white !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(255, 102, 0, 0.2);
+    }
+  }
+}
