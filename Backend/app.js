@@ -6,10 +6,12 @@ const cors = require('cors');
 
 const categoryRoutes = require("./routes/category");
 const brandRoutes = require("./routes/brand");
+const authRoutes = require("./routes/auth");
 // const cartRoutes = require("./routes/cart");
 // const wishlistRoutes = require("./routes/wishlist");
 // const userRoutes = require("./routes/user");
 const productRoutes = require("./routes/product");
+const orderRoutes = require("./routes/order");
 // const orderRoutes = require("./routes/order");
 const customerRoutes = require("./routes/customer");
 
@@ -24,6 +26,8 @@ app.use("/category",categoryRoutes);
 app.use("/brand", brandRoutes);
 app.use("/products", productRoutes);
 app.use("/customer", customerRoutes);
+app.use("/auth", authRoutes);
+app.use("/orders", orderRoutes);
 
 // app.use("/cart", cartRoutes);
 // app.use("/wishlist", wishlistRoutes);
